@@ -1,13 +1,11 @@
-<div class="sidebar">
+<div class="sidebar" [ngClass]="isToggled ? 'toggle' : ''">
+    <button (click)="toggle()">Toggle</button>
     <ul>
-        <li>
-            <a>
-                <img src="../../../assets/images/dashboard.svg" alt="" width="20px">
-            Opcion 1
+        <li *ngFor="let option of options" (click)="selectedOption = option.name" [ngClass]="selectedOption == option.name ? 'selected' : ''">
+            <a [href]="option.path">
+                <img [src]="option.icon" alt="" width="20px">
+            {{ option.name }}
             </a>
-        </li>
-        <li>
-            Opcion 2
         </li>
     </ul>
 </div>

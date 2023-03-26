@@ -13,7 +13,7 @@
         width: 100%;
 
         li {
-            padding: 5px 20px;
+            padding: 10px 20px;
             position: relative;
 
             a {
@@ -24,13 +24,14 @@
 
                 img {
                     display: inline-block;
+                    padding-right: 10px;
                     vertical-align: middle;
                     filter: invert(100%)
                 }
             }
         }
 
-        li:active {
+        li:hover, .selected {
             background-color: #ffffff;
             border-bottom-left-radius: 25px;
             border-top-left-radius: 25px;
@@ -44,4 +45,8 @@
             }
         }
     }
+}
+
+.toggle {
+    width: 55px;
 }
