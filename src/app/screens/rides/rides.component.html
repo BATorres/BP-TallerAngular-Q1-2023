@@ -1,1 +1,52 @@
 <p>rides works!</p>
+<div class="row">Aqui estados</div>
+
+<div class="row">
+  <table>
+    <tr>
+      <th *ngFor="let column of columns">
+        {{ column }}
+      </th>
+    </tr>
+    <tr *ngFor="let ride of rides.slice(firstRegister, lastRegister)">
+      <td class="row user" style="max-width: 250px">
+        <div class="user">
+          <div class="user__image">
+            <img [src]="ride.user.image" alt="" />
+          </div>
+  
+          <div class="user__info">
+            <p>
+              <b>{{ ride.user.name }}</b>
+            </p>
+            <p>
+              {{ ride.user.phone }}
+            </p>
+          </div>
+        </div>
+      </td>
+      <td>{{ ride.carConfort }}</td>
+      <td>{{ ride.orderedTime | date : "dd.MM.yyyy hh:mm" }}</td>
+      <td>{{ ride.startLocation }}</td>
+      <td>{{ ride.finishLocation }}</td>
+      <td>
+        <span class="income">
+          {{ ride.income | currency : "USD" }}
+        </span>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="paginator">
+  <p>{{ currentPage }} - {{ lastPage }} of items</p>
+  <button [disabled]="pages.length == 1" (click)="paginate(1)">
+    &laquo;
+  </button>
+  <button *ngFor="let page of pages" (click)="paginate(page)" [ngClass]="{ 'paginator__option': currentPage }">
+    {{ page }}
+  </button>
+  <button (click)="paginate(lastPage)">
+    &raquo;
+  </button>
+</div>

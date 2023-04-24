@@ -1,0 +1,56 @@
+/* .row {
+    display: inline-flex;
+} */
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+th {
+    background-color: #f7f8fa;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+img {
+    border-radius: 50%;
+    max-height: 75px;
+    max-width: 75px;
+}
+
+.user {
+    display: flex;
+
+    &__image {
+        flex-direction: row-reverse;
+    }
+
+    &__info {
+        width: 100%;
+    }
+}
+
+.income {
+    background-color: #ddebe6;
+    border-radius: 100px;
+    color: #54c09e;
+    padding: 5px 0px 5px 0px;
+    padding-left: max(50px, 5%);
+    padding-right: max(50px, 5%);
+    text-overflow: ellipsis;
+}
+
+.paginator {
+    display: inline-flex;
+
+    button {
+        background: none;
+        border: none;
+    }
+
+    &__option {
+        background: #8184ef;
+        border-radius: 10px;
+    }
+}
